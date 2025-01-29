@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Product Showcase</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function scrollDown() {
+            document.getElementById("below").scrollIntoView({ behavior: 'smooth' });
+        }
+        function toggleDropdown() {
+            const dropdown = document.querySelector('.dropdown');
+            dropdown.classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+
+<div class="full-image">
+        <a href="https://wa.me/77012179198" target="_blank"><button class="button_whatsapp"></button></a>
+        
+        <div class="overlay"></div>
+        <div class="text-container">
+            <h1 class="mainText" style="margin-top: 10px; color: white">Автомобили в аренду с правом выкупа</h1>
+            <h1 class="subText" style="color: white;">Одобрение в 95% случаев, низкий первоначальный взнос и быстрое оформление.</h1>
+        </div>
+        <div class="scrollDown" onclick="scrollDown()" style="justify-content: center"></div>
+    </div>
+
+<div class="newDiv" id="below">
+    <div class="text-container">
+        <h1 class="subText" style="font-size: 32px; text-align: center; margin-bottom: 40px">Как работает программа аренды авто с правом выкупа?</h1>
+        <h1 class="subText" style="margin: 0 auto; max-width: 750px; line-height: 1.5">Наша компания предлагает автомобили в аренду с возможностью последующего выкупа. Вы можете выбрать автомобиль из нашего парка или приобрести его у сторонних лиц. Мы предоставляем выгодные условия: низкий первоначальный взнос, быстрое оформление и отсутствие волокиты с документами. Кредитная история не важна — одобрение в 95% случаев.
+        </h1>
+    </div>    
+</div>
+
+<nav class="navbar">
+    <ul>
+        <li><a href="#Zayava">Оставить заявку</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="fullDiv">
+    <div class="text-container">
+        <h1 class="mainText" style="text-align: center; margin-bottom: 40px">Аренда авто с выкупом: просто и удобно</h1>
+        <h1 class="subText" style="font-size: 24px; margin: 0 auto;">Выбирайте автомобиль, который вам нравится, определяйте срок аренды, а также удобные для вас ежемесячные платежи, чтобы все соответствовало вашим требованиям.</h1>
+
+        
+        <h1 class="mainText" style="font-size: 20px; text-align: left;"> Выбор автомобиля </h1>
+        <h1 class="subText" style="font-size: 20px; text-align: left; margin-bottom: 10px"> Вы можете выбрать автомобиль из нашего парка или приобрести его у сторонних лиц. </h1>
+        
+        <h1 class="mainText" style="font-size: 20px; text-align: left;"> Низкий первоначальный взнос </h1>
+        <h1 class="subText" style="font-size: 20px; text-align: left; margin-bottom: 10px"> Мы предлагаем выгодные условия с низким первоначальным взносом. </h1>
+
+        <h1 class="mainText" style="font-size: 20px; text-align: left;"> Быстрое оформление </h1>
+        <h1 class="subText" style="font-size: 20px; text-align: left; margin-bottom: 10px"> Для оформления нужны только удостоверение личности и водительские права. </h1>
+
+        <h1 class="mainText" style="font-size: 20px; text-align: left;"> Отсутствие волокиты с документами </h1>
+        <h1 class="subText" style="font-size: 20px; text-align: left; margin-bottom: 10px">  Прозрачные условия без лишних сложностей. </h1>
+
+        <h1 class="mainText" style="font-size: 20px; text-align: left;"> Досрочное погашение </h1>
+        <h1 class="subText" style="font-size: 20px; text-align: left; margin-bottom: 10px"> Возможность досрочного выкупа автомобиля. </h1>
+
+        <h1 class="mainText" style="font-size: 20px; text-align: left;"> Одобрение в 95% случаев </h1>
+        <h1 class="subText" style="font-size: 20px; text-align: left; margin-bottom: 10px"> Кредитная история не важна — одобрение в 95% случаев. </h1>
+    </div>
+</div>
+
+<div class="fullDiv" style="height: 100vh; background-color: white;" id="Zayava">
+    <div class="text-container">
+        <h1 class="mainText" style="color: black; font-size: 40px; text-align: center; margin-bottom: 40px"> Оставьте заявку на аренду </h1>
+        <h1 class="subText" style="font-size: 24px; text-align: center; margin: 0 auto; margin-bottom: 80px;"> Мы с радостью поможем вам найти авто, которое идеально подойдет именно вам.</h1>
+
+        <div class="input-container">
+            <div class="input-group">
+                <label for="input1" class="subText">Электронная почта</label>
+                <input type="text" id="input1" class="custom-input" placeholder="a@gmail.com">
+            </div>
+
+            <div class="input-group">
+                <label for="input2" class="subText">Имя</label>
+                <input type="text" id="input2" class="custom-input" placeholder="Shavkat Rakhmonov">
+            </div>
+
+            <div class="input-group">
+                <label for="input3" class="subText">Телефон</label>
+                <input type="text" id="input3" class="custom-input" placeholder="87012345678">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="position:relative;overflow:hidden;">
+    <a href="https://yandex.com/maps/org/extracar/108874111287/?utm_medium=mapframe&utm_source=maps" 
+       style="color:#eee;font-size:12px;position:absolute;top:0px;">Extracar
+    </a>
+    <a href="https://yandex.com/maps/163/astana/category/car_rental/184108163/?utm_medium=mapframe&utm_source=maps" 
+       style="color:#eee;font-size:12px;position:absolute;top:14px;">Car rental in Astana
+    </a>
+    <iframe src="https://yandex.com/map-widget/v1/org/extracar/108874111287/?ll=71.428160%2C51.170886&z=16" 
+            width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;">
+    </iframe>
+</div>
+
+</body>
+</html>
