@@ -61,7 +61,11 @@
     height: 120vh;
     background-color: #ebebeb;
     background-size: cover;
-    background-position: center;
+    background-position: center;;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .scrollDown {
@@ -100,6 +104,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 label {
@@ -190,6 +195,34 @@ main {
     border-radius: 5px;
     max-width: 200px;
 }
+
+.button {
+    margin-top: 110vh; /* Adds space between the last input and the button */
+    padding: 40px;
+    border-radius: 15px;
+    background-color: #5ea4df;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 500px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    font-family: "Tilda Sans", sans-serif; /* change font family */
+    font-size: 18px; /* change font size */
+    letter-spacing: 2px; /* change letter spacing */
+}
+
+.button:after {
+    content: "Отправить заявку";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
 
 .button_whatsapp {
     position: relative;
@@ -299,10 +332,14 @@ footer {
 
     .fullDiv{
         position: relative;
-        height: 150vh;
+        height: 125vh;
         background-color: #ebebeb;
         background-size: cover;
         background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .custom-input {
@@ -327,6 +364,19 @@ footer {
         cursor: pointer;
         z-index: 3;
         animation: bounce 2s infinite; /* Apply animation */
+    }
+
+    .button {
+        margin: 110vh auto 0 auto; /* Adds space between the last input and the button */
+        padding: 25px;
+        border-radius: 10px;
+        background-color: #5ea4df;
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: 200px;
+        text-align: center;
+        justify-content: center;
     }
     
 }

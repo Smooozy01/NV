@@ -1,14 +1,30 @@
-const scrollDownArrow = document.querySelector('.scrollDown');
+function scrollDown() {
+    document.getElementById("below").scrollIntoView({ behavior: 'smooth' });
+}
 
-// Create a dummy element at the bottom of the page
-const dummyElement = document.createElement('div');
-dummyElement.style.position = 'absolute';
-dummyElement.style.bottom = '0px';
-dummyElement.style.left = '0px';
-document.body.appendChild(dummyElement);
+const apiUrl = 'http://localhost:3000/request';
 
-scrollDownArrow.addEventListener('click', () => {
-    dummyElement.scrollIntoView({
-        behavior: 'smooth'
-    });
+document.getElementById('requestForm').addEventListener('submit', async (e) => {
+    e.preventDefault(); // Prevent default form submission
+
+    const email = document.getElementById('email').value;
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+
+    try {
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, name, phone })
+        });
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        const newClient = await response.json();
+        console.log(newClient);
+    } catch (error) {
+        console.error('Error submitting the form:', error);
+    }
 });

@@ -5,20 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Product Showcase</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        function scrollDown() {
-            document.getElementById("below").scrollIntoView({ behavior: 'smooth' });
-        }
-        function toggleDropdown() {
-            const dropdown = document.querySelector('.dropdown');
-            dropdown.classList.toggle('active');
-        }
-    </script>
 </head>
 <body>
 
 <div class="full-image">
-        <a href="https://wa.me/77012179198" target="_blank"><button class="button_whatsapp"></button></a>
+        <a href="https://wa.me/77055401332" target="_blank"><button class="button_whatsapp"></button></a>
         
         <div class="overlay"></div>
         <div class="text-container">
@@ -45,7 +36,7 @@
     </ul>
 </nav>
 
-<div class="fullDiv">
+<div class="fullDiv" style="height: 140vh">
     <div class="text-container">
         <h1 class="mainText" style="text-align: center; margin-bottom: 40px">Аренда авто с выкупом: просто и удобно</h1>
         <h1 class="subText" style="font-size: 24px; margin: 0 auto;">Выбирайте автомобиль, который вам нравится, определяйте срок аренды, а также удобные для вас ежемесячные платежи, чтобы все соответствовало вашим требованиям.</h1>
@@ -71,41 +62,46 @@
     </div>
 </div>
 
-<div class="fullDiv" style="height: 100vh; background-color: white;" id="Zayava">
-    <div class="text-container">
-        <h1 class="mainText" style="color: black; font-size: 40px; text-align: center; margin-bottom: 40px"> Оставьте заявку на аренду </h1>
-        <h1 class="subText" style="font-size: 24px; text-align: center; margin: 0 auto; margin-bottom: 80px;"> Мы с радостью поможем вам найти авто, которое идеально подойдет именно вам.</h1>
+<div class="fullDiv" style="background-color: white;" id="Zayava">
+    <form id="requestForm">
+        <div class="text-container">
+            <h1 class="mainText" style="color: black; font-size: 40px; text-align: center; margin-bottom: 40px"> Оставьте заявку на аренду </h1>
+            <h1 class="subText" style="font-size: 24px; text-align: center; margin: 0 auto; margin-bottom: 80px;"> Мы с радостью поможем вам найти авто, которое идеально подойдет именно вам.</h1>
 
-        <div class="input-container">
-            <div class="input-group">
-                <label for="input1" class="subText">Электронная почта</label>
-                <input type="text" id="input1" class="custom-input" placeholder="a@gmail.com">
-            </div>
+            <div class="input-container">
+                <div class="input-group">
+                    <label for="email" class="subText">Электронная почта</label>
+                    <input type="text" id="email" class="custom-input" placeholder="a@gmail.com">
+                </div>
 
-            <div class="input-group">
-                <label for="input2" class="subText">Имя</label>
-                <input type="text" id="input2" class="custom-input" placeholder="Shavkat Rakhmonov">
-            </div>
+                <div class="input-group">
+                    <label for="name" class="subText">Имя</label>
+                    <input type="text" id="name" class="custom-input" placeholder="Shavkat Rakhmonov">
+                </div>
 
-            <div class="input-group">
-                <label for="input3" class="subText">Телефон</label>
-                <input type="text" id="input3" class="custom-input" placeholder="87012345678">
+                <div class="input-group">
+                    <label for="phone" class="subText">Телефон</label>
+                    <input type="text" id="phone" class="custom-input" placeholder="87012345678">
+                </div>
             </div>
         </div>
-    </div>
+
+        <button class="button" type="submit"></button> 
+    </form>
 </div>
 
 <div style="position:relative;overflow:hidden;">
-    <a href="https://yandex.com/maps/org/extracar/108874111287/?utm_medium=mapframe&utm_source=maps" 
-       style="color:#eee;font-size:12px;position:absolute;top:0px;">Extracar
+    <a href="https://yandex.com/maps/163/astana/?utm_medium=mapframe&utm_source=maps"
+       style="color:#eee;font-size:12px;position:absolute;top:0px;">Astana
     </a>
-    <a href="https://yandex.com/maps/163/astana/category/car_rental/184108163/?utm_medium=mapframe&utm_source=maps" 
-       style="color:#eee;font-size:12px;position:absolute;top:14px;">Car rental in Astana
-    </a>
-    <iframe src="https://yandex.com/map-widget/v1/org/extracar/108874111287/?ll=71.428160%2C51.170886&z=16" 
+    <a href="https://yandex.com/maps/163/astana/house/beybitshilik_koshesi_25/Y0gYcgZoTUUGQFtrfX12c31lZw==/?ll=71.418401%2C51.172163&utm_medium=mapframe&utm_source=maps&z=17.14" 
+        style="color:#eee;font-size:12px;position:absolute;top:14px;">Beıbitshilik kóshesi, 25 — Yandex Maps
+</a>
+    <iframe src="https://yandex.com/map-widget/v1/?ll=71.418401%2C51.172163&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg2NzM1MTk3MRJJ0prQsNC30LDSm9GB0YLQsNC9LCDQkNGB0YLQsNC90LAsINCR0LXQudCx0ZbRgtGI0ZbQu9GW0Log0LrTqdGI0LXRgdGWLCAyNSIKDTnWjkIVS7BMQg%2C%2C&z=17.14"
             width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;">
     </iframe>
 </div>
 
 </body>
+<script src="script.js"> </script>
 </html>
