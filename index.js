@@ -33,7 +33,7 @@ app.post('/request', async (req, res) => {
     try {
         const { name, email, phone } = req.body;
         if (!name) return res.status(400).json({ error: 'Введите имя.' });
-        if (!email) return res.status(400).json({ error: 'Email is required.' });
+        if (!email) return res.status(400).json({ error: 'Введите коррекный email.' });
         if (!phone) return res.status(400).json({ error: 'Введите корректный номер телефона.' });
 
         const client = new Client({ name, email, phone });
