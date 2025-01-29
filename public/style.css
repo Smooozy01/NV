@@ -1,7 +1,7 @@
 .full-image{
     position: relative;
     height: 100vh;
-    background-image: url('../styles/k46jj04884l261015_2.jpg');
+    background-image: url("styles/k46jj04884l261015_2.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -45,7 +45,7 @@
 
 @font-face {
     font-family: 'Tilda Sans';
-    src: url('../styles/TildaSans-Light.woff') format('truetype');
+    src: url('styles/TildaSans-Light.woff') format('truetype');
 }
 
 .newDiv{
@@ -197,7 +197,7 @@ main {
     padding: 0;
     width: 50px; /* Set width and height to make it square */
     height: 50px;
-    background-image: url("../styles/whatsapp_icon1webp.webp");
+    background-image: url('styles/whatsapp_icon1webp.webp');
     background-size: 150%;
     background-position: center;
     border: none;
@@ -284,7 +284,7 @@ footer {
     .full-image{
         position: relative;
         height: 95vh;
-        background-image: url('../styles/k46jj04884l261015_2.jpg');
+        background-image: url('styles/k46jj04884l261015_2.jpg');
         background-size: cover;
         background-position: center;
     }
