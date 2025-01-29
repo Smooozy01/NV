@@ -27,4 +27,18 @@ document.getElementById('requestForm').addEventListener('submit', async (e) => {
     } catch (error) {
         console.error('Error submitting the form:', error);
     }
+    
+    document.getElementById(email).value = '';
+    document.getElementById(name).value = '';
+    document.getElementById(phone).value = '';
+    
+});
+
+// Add an event listener to the submit button
+document.getElementById('knopka') .addEventListener('click', () => {
+    // Display a success message
+    const successMessage = document.createElement('p');
+    successMessage.textContent = 'Successfully submitted';
+    document.body.appendChild(successMessage);
+    
 });

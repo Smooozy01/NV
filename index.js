@@ -40,6 +40,7 @@ app.post('/request', async (req, res) => {
         await client.save();
         res.status(201).json(client);
     } catch (err) {
+        console.log(err);
         res.status(500).json({ error: 'Ошибка на сервере.', details: err.message });
     }
 });
