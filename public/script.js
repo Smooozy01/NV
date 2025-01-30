@@ -2,7 +2,7 @@ function scrollDown() {
     document.getElementById("below").scrollIntoView({ behavior: 'smooth' });
 }
 
-const apiUrl = 'http://localhost:3000/request';
+const apiUrl = 'https://vykup.onrender.com/request';
 
 document.getElementById('requestForm').addEventListener('submit', async (e) => {
     e.preventDefault(); // Prevent default form submission
