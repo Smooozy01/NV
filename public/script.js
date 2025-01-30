@@ -28,9 +28,9 @@ document.getElementById('requestForm').addEventListener('submit', async (e) => {
         console.error('Error submitting the form:', error);
     }
     
-    document.getElementById(email).value = '';
-    document.getElementById(name).value = '';
-    document.getElementById(phone).value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('name').value = '';
+    document.getElementById('phone').value = '';
     
 });
 
