@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Product Showcase</title>
+    <title>Выкуп Авто Астана</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -29,14 +29,14 @@
 
 <nav class="navbar">
     <ul>
-        <li><a href="#Zayava">Оставить заявку</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="#Zayava">Заказать обратный звонок</a></li>
+        <li><a href="#map">Где мы находимся</a></li>
+        <li><a href="#pros">Наши приемущества</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
-<div class="fullDiv" style="height: 140vh">
+<div class="fullDiv" id="pros">
     <div class="text-container">
         <h1 class="mainText" style="text-align: center; margin-bottom: 40px">Аренда авто с выкупом: просто и удобно</h1>
         <h1 class="subText" style="font-size: 24px; margin: 0 auto;">Выбирайте автомобиль, который вам нравится, определяйте срок аренды, а также удобные для вас ежемесячные платежи, чтобы все соответствовало вашим требованиям.</h1>
@@ -62,7 +62,10 @@
     </div>
 </div>
 
-<div class="fullDiv" style="background-color: white;" id="Zayava">
+<div class="fullDiv" style="background-color: white; height: 125vh" id="Zayava">
+    
+    <div id="popup" class="popup"> Заявка успешно отправлена! </div>
+    
     <form id="requestForm">
         <div class="text-container">
             <h1 class="mainText" style="color: black; font-size: 40px; text-align: center; margin-bottom: 40px"> Оставьте заявку на аренду </h1>
@@ -90,7 +93,7 @@
     </form>
 </div>
 
-<div style="position:relative;overflow:hidden;">
+<div style="position:relative;overflow:hidden;" id="map">
     <a href="https://yandex.com/maps/163/astana/?utm_medium=mapframe&utm_source=maps"
        style="color:#eee;font-size:12px;position:absolute;top:0px;">Astana
     </a>

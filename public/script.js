@@ -36,9 +36,15 @@ document.getElementById('requestForm').addEventListener('submit', async (e) => {
 
 // Add an event listener to the submit button
 document.getElementById('knopka') .addEventListener('click', () => {
+    
     // Display a success message
-    const successMessage = document.createElement('p');
-    successMessage.textContent = 'Successfully submitted';
-    document.body.appendChild(successMessage);
+    const popup = document.getElementById('popup');
+    popup.classList.add('show');
+    
+    // Hide the popup after 3 seconds
+    setTimeout(() => {
+        popup.classList.remove('show');
+        popup.classList.add('hide');
+    }, 3000);
     
 });

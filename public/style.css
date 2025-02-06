@@ -129,6 +129,28 @@ label {
     box-shadow: none; /* Remove focus glow */
 }
 
+.popup {
+    position: fixed;
+    top: 20px;
+    right: -300px; /* Off screen initially */
+    background-color: #4caf50;
+    color: white;
+    padding: 16px;
+    border-radius: 4px;
+    font-size: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.5s ease-out;
+    z-index: 3;
+}
+
+.popup.show {
+    right: 20px; /* Slide in */
+}
+
+.popup.hide {
+    right: -300px; /* Slide out */
+}
+
 .navbar {
     position: relative;
     width: 100%;
@@ -332,7 +354,7 @@ footer {
 
     .fullDiv{
         position: relative;
-        height: 125vh;
+        height: 150vh;
         background-color: #ebebeb;
         background-size: cover;
         background-position: center;
