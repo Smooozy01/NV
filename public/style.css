@@ -68,6 +68,18 @@
     align-items: center;
 }
 
+.ZayavaDiv{
+    position: relative;
+    height: 120vh;
+    background-color: #ebebeb;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .scrollDown {
     position: absolute;
     bottom: 50px;
@@ -320,6 +332,17 @@ footer {
         word-wrap: break-word; /* Ensures long words break to fit within the container */
     }
 
+    .text-containerZayava {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 2;
+        width: 80%; /* Ensures the text wraps within this container */
+        word-wrap: break-word; /* Ensures long words break to fit within the container */
+    }
+
     .mainText {
         margin-top: 30px;
         color: black; /* Adjust the color as needed */
@@ -354,7 +377,19 @@ footer {
 
     .fullDiv{
         position: relative;
-        height: 150vh;
+        height: 160vh;
+        background-color: #ebebeb;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .ZayavaDiv{
+        position: relative;
+        height: 115vh;
         background-color: #ebebeb;
         background-size: cover;
         background-position: center;
@@ -389,7 +424,7 @@ footer {
     }
 
     .button {
-        margin: 110vh auto 0 auto; /* Adds space between the last input and the button */
+        margin: 105vh auto 0 auto; /* Adds space between the last input and the button */
         padding: 25px;
         border-radius: 10px;
         background-color: #5ea4df;
