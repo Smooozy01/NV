@@ -4,6 +4,7 @@
     background-image: url("styles/k46jj04884l261015_2.jpg");
     background-size: cover;
     background-position: center;
+    display: flex;
 }
 
 .overlay { 
@@ -51,7 +52,7 @@
 .newDiv{
     position: relative;
     height: 50vh;
-    background-color: white;
+    background-color: #ebebeb;
     background-size: cover;
     background-position: center;
 }
@@ -78,6 +79,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
 }
 
 .scrollDown {
@@ -124,6 +126,86 @@ label {
     text-align: justify;
     font-weight: bold;
     margin-bottom: 5px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 100vw;
+    position: relative;
+    margin: auto;
+    background-color: #ffffff;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hide the images by default */
+.mySlides {
+    max-width: 1000px;
+    display: none;
+    position: relative;
+    margin: 10vh auto auto;
+}
+
+.mySlides img {
+    border-radius: 20px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transform: translateY(-50%)
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+    color: #000000;
+    font-size: 32px;
+    font-family: 'Trebuchet MS', sans-serif;
+    padding: 8px 12px;
+    position: absolute;
+    top: -60px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
 }
 
 .custom-input {
@@ -231,7 +313,7 @@ main {
 }
 
 .button {
-    margin-top: 110vh; /* Adds space between the last input and the button */
+    margin-top: 20vh; /* Adds space between the last input and the button */
     padding: 40px;
     border-radius: 15px;
     background-color: #5ea4df;
@@ -243,6 +325,7 @@ main {
     margin-left: auto;
     margin-right: auto;
     position: relative;
+    left: 20%;
     font-family: "Tilda Sans", sans-serif; /* change font family */
     font-size: 18px; /* change font size */
     letter-spacing: 2px; /* change letter spacing */
@@ -259,8 +342,8 @@ main {
 
 
 .button_whatsapp {
-    position: relative;
-    z-index: 2;
+    position: fixed;
+    z-index: 3;
     padding: 0;
     width: 50px; /* Set width and height to make it square */
     height: 50px;
@@ -271,9 +354,33 @@ main {
     border-radius: 12px;
     transition: all 0.3s ease-in-out;
     margin: 20px; /* Add space between screen borders */
+    display: block;
 }
 
 .button_whatsapp:hover {
+    background-color: #7979ed;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.button_instagram {
+    position: fixed;
+    z-index: 4;
+    padding: 0;
+    width: 50px; /* Set width and height to make it square */
+    height: 50px;
+    background-image: url('styles/instagram-logo-instagram-social-media-icon-free-png.png');
+    background-size: 135%;
+    background-position: center;
+    border: none;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+    margin-top: 100px; /* Add space between screen borders */
+    margin-left: 20px;
+    display: block;
+}
+
+.button_instagram:hover {
     background-color: #7979ed;
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
@@ -370,7 +477,6 @@ footer {
     .newDiv{
         position: relative;
         height: 70vh;
-        background-color: white;
         background-size: cover;
         background-position: center;
     }
@@ -434,6 +540,7 @@ footer {
         width: 200px;
         text-align: center;
         justify-content: center;
+        left: auto;
     }
 
     .navbar a {
@@ -445,6 +552,14 @@ footer {
         border-radius: 5px;
         transition: background-color 0.3s, color 0.3s;
         margin-bottom: 0;
+    }
+
+    .slideshow-container{
+        height: 45vh;
+    }
+
+    .text{
+        font-size: 28px;
     }
     
 }
