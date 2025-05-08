@@ -272,6 +272,15 @@ label {
     box-shadow: none; /* Remove focus glow */
 }
 
+.error-text {
+    color: red; 
+    display: none; 
+    position: absolute; 
+    margin-top: -25px;
+    font-family: "Tilda Sans", sans-serif;
+    font-size: 20px;
+}
+
 .popup {
     position: fixed;
     top: 20px;

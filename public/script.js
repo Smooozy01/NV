@@ -5,17 +5,38 @@ function scrollDown(destination) {
 const apiUrl = 'https://vykup.onrender.com/request';
 
 document.getElementById('requestForm').addEventListener('submit', async (e) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault();
 
     const email = document.getElementById('email').value;
     const name = document.getElementById('name').value;
     const phone = document.getElementById('phone').value;
+    
+    let errorEmail, errorName, errorPhone = false;
+
+    if (!email) { errorEmail = true} 
+    if (!name) { errorName = true} 
+    if (!phone) { errorPhone = true}
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) { errorEmail = true; }
+
+    const phoneRegex = /^[\d\s+]+$/;
+    if (!phoneRegex.test(phone)) { errorPhone = true; }
+    
+    if (errorEmail || errorName || errorPhone) {
+        
+        if (errorEmail) { showError('email-error');} 
+        if (errorName) { showError('name-error');} 
+        if (errorPhone) { showError('phone-error');}
+        
+        return;
+    }
 
     try {
         const response = await fetch(apiUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, name, phone })
+            body: JSON.stringify({ email, name, phone, timestamp: new Date() })
         });
 
         if (!response.ok) {
@@ -24,29 +45,39 @@ document.getElementById('requestForm').addEventListener('submit', async (e) => {
 
         const newClient = await response.json();
         console.log(newClient);
+
+        // Clear form
+        document.getElementById('email').value = '';
+        document.getElementById('name').value = '';
+        document.getElementById('phone').value = '';
+
+        // Show success popup
+        const popup = document.getElementById('popup');
+        popup.classList.add('show');
+        
+        // Hide the popup after 3 seconds
+        setTimeout(() => {
+            popup.classList.remove('show');
+        }, 3000);
+
     } catch (error) {
         console.error('Error submitting the form:', error);
+        alert('Failed to submit form. Please try again.');
     }
-    
-    document.getElementById('email').value = '';
-    document.getElementById('name').value = '';
-    document.getElementById('phone').value = '';
-    
 });
 
-// Add an event listener to the submit button
-document.getElementById('knopka') .addEventListener('click', () => {
+function showError(error){
+    const err = document.getElementById(error);
     
-    // Display a success message
-    const popup = document.getElementById('popup');
-    popup.classList.add('show');
-    
-    // Hide the popup after 3 seconds
+    err.style.display = 'block'; err.classList.add('show');
+
+    // Hide the error messages after 3 seconds
     setTimeout(() => {
-        popup.classList.remove('show');
+        err.classList.remove('show');
+        setTimeout(() => err.style.display = 'none', 300);
+        
     }, 3000);
-    
-});
+}
 
 const carsContainer = document.getElementById('cars');
 
