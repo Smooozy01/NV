@@ -1,0 +1,153 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+}
+
+.button_whatsapp {
+    position: fixed;
+    z-index: 3;
+    padding: 0;
+    width: 50px; /* Set width and height to make it square */
+    height: 50px;
+    background-image: url('styles/whatsapp_icon1webp.webp');
+    background-size: 150%;
+    background-position: center;
+    border: none;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    margin: 20px; /* Add space between screen borders */
+    display: block;
+}
+
+.button_whatsapp:hover {
+    background-color: #7979ed;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.button_instagram {
+    position: fixed;
+    z-index: 4;
+    padding: 0;
+    width: 50px; /* Set width and height to make it square */
+    height: 50px;
+    background-image: url('styles/instagram-logo-instagram-social-media-icon-free-png.png');
+    background-size: 135%;
+    background-position: center;
+    border: none;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+    margin-top: 100px; /* Add space between screen borders */
+    margin-left: 20px;
+    display: block;
+}
+
+.button_instagram:hover {
+    background-color: #7979ed;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+@font-face {
+    font-family: 'Tilda Sans';
+    src: url('styles/TildaSans-Light.woff') format('truetype');
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: repeat(1, minmax(300px, 1fr));
+    }
+}
+
+.card {
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out, outline 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 12px 12px 8px 8px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.details {
+    padding: 15px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.actions button {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.whatsapp {
+    background: green;
+    color: white;
+}
+
+.call {
+    background: #483d4d;
+    color: white;
+}
+
+.subText {
+    color: black; /* Adjust the color as needed */
+    font-size: 1.15em;
+    font-family: 'Tilda Sans', sans-serif;
+    font-weight: 100;
+    margin-top: 5px;
+    line-height: 1;
+}
+
+.desc{
+    font-size: 24px;
+    color: #000000;
+}
+
+@media screen and (min-width: 280px) and (max-width: 470px) {
+
+    .subText {
+        color: black; /* Adjust the color as needed */
+        font-size: 1.15em;
+        font-family: 'Tilda Sans', sans-serif;
+        font-weight: 100;
+        margin-top: 5px;
+        line-height: 1;
+    }
+
+    .desc{
+        font-size: 24px;
+    }
+    
+}

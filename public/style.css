@@ -1,3 +1,7 @@
+.rasch{
+    height: 20vh !important;
+}
+
 .full-image{
     position: relative;
     height: 100vh;
@@ -5,6 +9,28 @@
     background-size: cover;
     background-position: center;
     display: flex;
+}
+
+.mainButton{
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30vw;
+    height: 8vh;
+    border: 2px;
+    border-radius: 5px;
+    background-color: #5ea4df;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    font-family: "Tilda Sans", sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    text-align: center;
+    color: white;
 }
 
 .overlay { 
@@ -29,7 +55,7 @@
 }
 
 .mainText {
-    margin-top: 70px;
+    margin-top: 60px;
     color: black; /* Adjust the color as needed */
     font-size: 3.5em; /* Adjust the font size as needed */
     font-family: 'Trebuchet MS', sans-serif;
@@ -69,9 +95,77 @@
     align-items: center;
 }
 
+.calculatorPlace{
+    position: relative;
+    height: 40vh;
+    background-color: #ffffff;
+}
+
+.calculator{
+    background: #9fc8f4;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 700px;
+    max-width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5vh auto 0 auto;
+    height: 35vh;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    gap: 20px;
+    height: 60vh;
+    align-content: center;
+    grid-auto-rows: min-content;
+    padding: 10px;
+}
+
+.cars {
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out, outline 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 12px 12px 8px 8px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        height: 75vh;
+    }
+}
+
+.cars img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.selectedCar {
+    outline: 4px solid #5ea4df; /* Highlight selection */
+    transform: translateY(-10px) scale(1.015); /* Move up slightly */
+    transition: transform 0.3s ease, outline 0.3s ease, box-shadow 0.3s ease; /* Smooth effect */
+    box-shadow: 0 0 15px rgba(94, 164, 223, 0.6);
+}
+
+.details {
+    padding: 15px;
+}
+
 .ZayavaDiv{
     position: relative;
-    height: 120vh;
+    height: 100vh;
     background-color: #ebebeb;
     background-size: cover;
     background-position: center;
@@ -128,84 +222,39 @@ label {
     margin-bottom: 5px;
 }
 
-/* Slideshow container */
-.slideshow-container {
-    max-width: 100vw;
-    position: relative;
-    margin: auto;
-    background-color: #ffffff;
-    height: 70vh;
+.gallery-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 20px;
+    justify-content: space-around;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent wrapping */
+    padding-bottom: 10px; /* Space for scrollbar */
 }
 
-/* Hide the images by default */
-.mySlides {
-    max-width: 1000px;
-    display: none;
-    position: relative;
-    margin: 10vh auto auto;
-}
-
-.mySlides img {
-    border-radius: 20px;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    transform: translateY(-50%)
-}
-
-.prev {
-    left: 0;
-}
-
-.next {
-    right: 0;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-    color: #000000;
-    font-size: 32px;
-    font-family: 'Trebuchet MS', sans-serif;
-    padding: 8px 12px;
-    position: absolute;
-    top: -60px;
-    left: 0;
-    right: 0;
+.gallery-item {
+    margin-top: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
+    flex: 0 0 auto; /* Prevent items from stretching */
+    width: 700px; /* Set a fixed width for items */
 }
 
-/* The dots/bullets/indicators */
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
+.gallery-item img {
+    width: 100%;
+    border-radius: 10px;
 }
 
-.active, .dot:hover {
-    background-color: #717171;
+.description {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#avtonashi{
+    font-size: 42px;
 }
 
 .custom-input {
@@ -267,7 +316,7 @@ label {
 .navbar a {
     text-decoration: none;
     color: #333;
-    font-size: 32px;
+    font-size: 38px;
     font-family: "Tilda Sans", sans-serif;
     padding: 8px 16px;
     border-radius: 5px;
@@ -313,7 +362,7 @@ main {
 }
 
 .button {
-    margin-top: 20vh; /* Adds space between the last input and the button */
+    margin-top: 10vh; /* Adds space between the last input and the button */
     padding: 40px;
     border-radius: 15px;
     background-color: #5ea4df;
@@ -396,6 +445,11 @@ footer {
     bottom: 0;
 }
 
+ .desc{
+     font-size: 28px;
+     color: #000000;
+ }
+
 @media screen and (min-width: 768px) and (max-width: 991px) {
 
     .text-container {
@@ -416,9 +470,18 @@ footer {
     }   
     
 
-} 
+}
 
 @media screen and (min-width: 280px) and (max-width: 470px) {
+    
+    .rasch{
+        height: 15vh !important;
+    }
+    
+    .mainButton{
+        width: 60vw;
+        font-size: 26px;
+    }
 
     body {
         font-size: 16px;
@@ -451,7 +514,7 @@ footer {
     }
 
     .mainText {
-        margin-top: 30px;
+        margin-top: 40px;
         color: black; /* Adjust the color as needed */
         font-size: 2em; /* Adjust the font size as needed */
         font-family: 'Trebuchet MS', sans-serif;
@@ -464,6 +527,10 @@ footer {
         font-weight: 100;
         margin-top: 5px;
         line-height: 1;
+    }
+    
+    .desc{
+        font-size: 20px;
     }
 
     .full-image{
@@ -553,13 +620,17 @@ footer {
         transition: background-color 0.3s, color 0.3s;
         margin-bottom: 0;
     }
-
-    .slideshow-container{
-        height: 45vh;
-    }
-
-    .text{
-        font-size: 28px;
+    
+    #avtonashi {
+        font-size: 32px;
     }
     
+    .gallery-item {
+        width: 90vw;
+    }
+
+    .container {
+        grid-template-columns: repeat(2, minmax(40vw, 1fr));
+        height: 75vh;
+    }
 }

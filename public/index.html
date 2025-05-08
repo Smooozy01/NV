@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Выкуп Авто Астана</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
 
@@ -17,48 +18,41 @@
             <h1 class="mainText" style="margin-top: 10px; color: white">Автомобили в аренду с правом выкупа</h1>
             <h1 class="subText" style="color: white;">Одобрение в 95% случаев, низкий первоначальный взнос и быстрое оформление.</h1>
         </div>
-        <div class="scrollDown" onclick="scrollDown()" style="justify-content: center"></div>
-    </div>
+<!--        <div class="scrollDown" onclick="scrollDown()" style="justify-content: center"></div>-->
+    
+        <div class="mainButton" onclick="scrollDown('pickAuto')"> Выбрать Авто </div>
+        <div class="mainButton" onclick="scrollDown('Zayava')" style="bottom: 7%"> Записаться на Тест-Драйв </div>
+    
+</div>
 
-<div class="newDiv" id="below">
+<div class="rasch newDiv" style="background-color: white;" id="pickAuto">
     <div class="text-container">
-        <h1 class="subText" style="font-size: 32px; text-align: center; margin-bottom: 40px">Как работает программа аренды авто с правом выкупа?</h1>
-        <h1 class="subText" style="margin: 0 auto; max-width: 750px; line-height: 1.5">Наша компания предлагает автомобили в аренду с возможностью последующего выкупа. Вы можете выбрать автомобиль из нашего парка или приобрести его у сторонних лиц. Мы предоставляем выгодные условия: низкий первоначальный взнос, быстрое оформление и отсутствие волокиты с документами. Кредитная история не важна — одобрение в 95% случаев.
-        </h1>
-    </div>    
-</div>
-
-<div class="slideshow-container">
-    <!-- Full-width images with number and caption text -->
-    <div class="mySlides">
-        <img src="/styles/nexia/IMG_5717.jpg" style="width:100%">
-        <div class="text">Ravon Nexia R3</div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-
-    <div class="mySlides">
-        <img src="/styles/nexia/IMG_5719.jpg" style="width:100%">
-        <div class="text">2019</div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-
-    <div class="mySlides">
-        <img src="/styles/nexia/IMG_5721.jpg" style="width:100%">
-        <div class="text">Автомат</div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <h1 class="mainText"> Выберите автомобиль</h1>
     </div>
 </div>
-<br>
+<br><br>
 
-<!-- The dots/circles -->
-<div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
+<div class="container" id="cars">
+
 </div>
+
+<div class="calculatorPlace">
+    <div class="calculator" id="app">
+
+        <h1 class="subText desc"> Месяцы: {{ months }}</h1>
+        <input type="range" id="Months" v-model="months" min="6" max="30">
+
+        <h1 class="subText desc"> Платеж в день: {{ Intl.NumberFormat().format(dailyP) }}</h1>
+        <input type="range" id="DailyCost" v-model="dailyP" min="12000" max="20000" step=1000>
+
+        <h1 class="subText desc" style="margin-top: 30px"> Платеж в месяц: {{ Intl.NumberFormat().format(dailyP * 26) }}</h1>
+
+    </div>
+</div>
+
+<nav class="navbar" style="height: 12vh; background-color: white;">
+    <ul> <li><a href="cars.html" style="color: #5ea4df" id="avtonashi">Все наши Автомобили</a></li> </ul>
+</nav>
 
 <div class="fullDiv" id="pros">
     <div class="text-container">
@@ -67,33 +61,45 @@
 
         
         <h1 class="mainText" style="font-size: 20px; text-align: left;"> Выбор автомобиля </h1>
-        <h1 class="subText" style="font-size: 20px; text-align: left; margin-bottom: 10px"> Вы можете выбрать автомобиль из нашего парка или приобрести его у сторонних лиц. </h1>
+        <h1 class="subText" style="font-size: 20px; text-align: left; "> Вы можете выбрать автомобиль из нашего парка или приобрести его у сторонних лиц. </h1>
         
         <h1 class="mainText" style="font-size: 20px; text-align: left;"> Низкий первоначальный взнос </h1>
-        <h1 class="subText" style="font-size: 20px; text-align: left; margin-bottom: 10px"> Мы предлагаем выгодные условия с низким первоначальным взносом. </h1>
+        <h1 class="subText" style="font-size: 20px; text-align: left; "> Мы предлагаем выгодные условия с низким первоначальным взносом. </h1>
 
         <h1 class="mainText" style="font-size: 20px; text-align: left;"> Быстрое оформление </h1>
-        <h1 class="subText" style="font-size: 20px; text-align: left; margin-bottom: 10px"> Для оформления нужны только удостоверение личности и водительские права. </h1>
+        <h1 class="subText" style="font-size: 20px; text-align: left; "> Для оформления нужны только удостоверение личности и водительские права. </h1>
 
         <h1 class="mainText" style="font-size: 20px; text-align: left;"> Отсутствие волокиты с документами </h1>
-        <h1 class="subText" style="font-size: 20px; text-align: left; margin-bottom: 10px">  Прозрачные условия без лишних сложностей. </h1>
+        <h1 class="subText" style="font-size: 20px; text-align: left; ">  Прозрачные условия без лишних сложностей. </h1>
 
         <h1 class="mainText" style="font-size: 20px; text-align: left;"> Досрочное погашение </h1>
-        <h1 class="subText" style="font-size: 20px; text-align: left; margin-bottom: 10px"> Возможность досрочного выкупа автомобиля. </h1>
+        <h1 class="subText" style="font-size: 20px; text-align: left; "> Возможность досрочного выкупа автомобиля. </h1>
 
         <h1 class="mainText" style="font-size: 20px; text-align: left;"> Одобрение в 95% случаев </h1>
-        <h1 class="subText" style="font-size: 20px; text-align: left; margin-bottom: 10px"> Кредитная история не важна — одобрение в 95% случаев. </h1>
+        <h1 class="subText" style="font-size: 20px; text-align: left; "> Кредитная история не важна — одобрение в 95% случаев. </h1>
     </div>
 </div>
 
-<div class="ZayavaDiv" style="background-color: white" id="Zayava">
+<div id="review">
+    
+</div>
+
+<div class="newDiv" id="below" style="background-color: white">
+    <div class="text-container">
+        <h1 class="subText" style="font-size: 32px; text-align: center; margin-bottom: 40px">Условия аренды авто с правом выкупа</h1>
+        <h1 class="subText" style="margin: 0 auto; max-width: 750px; line-height: 1.5">Наша компания предлагает автомобили в аренду с возможностью последующего выкупа. Вы можете выбрать автомобиль из нашего парка или приобрести его у сторонних лиц. Мы предоставляем выгодные условия: низкий первоначальный взнос, быстрое оформление и отсутствие волокиты с документами. Кредитная история не важна — одобрение в 95% случаев.
+        </h1>
+    </div>
+</div>
+
+<div class="ZayavaDiv"  id="Zayava">
     
     <div id="popup" class="popup"> Заявка успешно отправлена! </div>
     
     <form id="requestForm">
         <div class="text-containerZayava">
-            <h1 class="mainText" style="color: black; font-size: 40px; text-align: center; margin-bottom: 40px"> Оставьте заявку на аренду </h1>
-            <h1 class="subText" style="font-size: 24px; text-align: center; margin: 0 auto; margin-bottom: 80px;"> Мы с радостью поможем вам найти авто, которое идеально подойдет именно вам.</h1>
+            <h1 class="mainText" style="color: black; font-size: 40px; text-align: center; margin-bottom: 40px"> Оставьте заявку на Тест-Драйв </h1>
+            <h1 class="subText" style="font-size: 24px; text-align: center; margin: 0 auto 80px;"> Мы с радостью поможем вам найти авто, которое идеально подойдет именно вам.</h1>
 
             <div class="input-container">
                 <div class="input-group">
@@ -138,6 +144,70 @@
     </iframe>
 </div>
 
-</body>
 <script src="script.js"> </script>
+<script>
+    const { createApp, ref, watch, onMounted } = Vue;
+
+    createApp({
+        setup() {
+            const dailyP = ref(16000);
+            const months = ref(20);
+            const carCost = ref(6000000);
+
+            function calculateMonths() {
+                if (carCost.value === 0 || dailyP.value === 0) return 0;
+                const netMonthlyPayment = (dailyP.value * 26) - (carCost.value * 0.03);
+                return Math.round(carCost.value / netMonthlyPayment);
+            }
+
+            function calculateDailyP() {
+                if (carCost.value === 0 || months.value === 0) return 0;
+                return Math.round(((carCost.value / months.value + (carCost.value * 0.03)) / 26 / 1000) * 2) * 500;
+            }
+
+            watch(dailyP, (newDailyP) => {
+                months.value = calculateMonths();
+            });
+
+            watch(months, (newMonths) => {
+                dailyP.value = calculateDailyP();
+            });
+
+            watch(carCost, () => {
+                months.value = calculateMonths();
+                dailyP.value = calculateDailyP();
+            });
+
+            function updateCost() {
+                const selectedCar = document.querySelector('.selectedCar');
+                if (selectedCar) {
+                    const ps = selectedCar.querySelectorAll('p');
+                    carCost.value = parseInt(ps[1]?.textContent.replace(/\s+/g, '') || "0", 10);
+                }
+            }
+
+            onMounted(() => {
+                updateCost(); // Initial update
+
+                const observer = new MutationObserver(() => {
+                    updateCost();
+                });
+
+                observer.observe(document.body, {
+                    childList: true,
+                    subtree: true,
+                    attributes: true,
+                    attributeFilter: ['class']
+                });
+            });
+
+            return { months, dailyP, selectedCarCost: carCost };
+        }
+    }).mount("#app");
+</script>
+
+
+
+
+</body>
 </html>
