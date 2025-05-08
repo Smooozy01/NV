@@ -10,12 +10,13 @@ app.use(cors());
 require('dotenv').config(); // Load environment variables from .env file
 
 const corsOptions = {
-    origin: 'https://vykup.onrender.com', // Replace with your frontend URL
-    methods: 'GET,POST', // Allow only necessary methods
-    allowedHeaders: 'Content-Type', // Allow only necessary headers
+    origin: ['https://vykup.onrender.com', 'https://tradeinn.kz', 'http://localhost:3000/'], 
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: 'Content-Type', 
 };
 
 app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 
 // Set up middleware
 app.use(bodyParser.json());

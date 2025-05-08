@@ -35,7 +35,12 @@ document.getElementById('requestForm').addEventListener('submit', async (e) => {
     try {
         const response = await fetch(apiUrl, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Origin': window.location.origin
+            },
             body: JSON.stringify({ email, name, phone, timestamp: new Date() })
         });
 
@@ -46,24 +51,20 @@ document.getElementById('requestForm').addEventListener('submit', async (e) => {
         const newClient = await response.json();
         console.log(newClient);
 
-        // Clear form
-        document.getElementById('email').value = '';
-        document.getElementById('name').value = '';
-        document.getElementById('phone').value = '';
-
-        // Show success popup
-        const popup = document.getElementById('popup');
-        popup.classList.add('show');
-        
-        // Hide the popup after 3 seconds
-        setTimeout(() => {
-            popup.classList.remove('show');
-        }, 3000);
-
     } catch (error) {
         console.error('Error submitting the form:', error);
-        alert('Failed to submit form. Please try again.');
     }
+
+    document.getElementById('email').value = '';
+    document.getElementById('name').value = '';
+    document.getElementById('phone').value = '';
+
+    const popup = document.getElementById('popup');
+    popup.classList.add('show');
+
+    setTimeout(() => {
+        popup.classList.remove('show');
+    }, 3000);
 });
 
 function showError(error){
